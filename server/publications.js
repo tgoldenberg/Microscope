@@ -8,5 +8,5 @@ Meteor.publish('comments', function(postId) {
 });
 
 Meteor.publish('notifications', function() {
-  return Notifications.find({userId: userId, read: false});
+  return Notifications.find({read: false, userId: this.userId});
 });
